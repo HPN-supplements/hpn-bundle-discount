@@ -143,9 +143,12 @@ Shopify ejecuta run.js (esta función)
 
 | Productos bundle en carrito | Descuento aplicado |
 |---|---|
+| 1 | 15% |
 | 2 | 20% |
 | 3 | 25% |
-| 4 | 30% |
+| 4+ | 30% |
+
+La Function calcula el tier con la cantidad total del grupo (`resolveTier()` en `extensions/bundle-discount-function/src/run.js`). Los bloques `bb_tier` del theme (hpn-motion) tienen que coincidir.
 
 Estos porcentajes se setean en `bundle-builder-page.js` → `getCurrentTier()` y se pasan como `_bundle_discount_pct` en el momento del add to cart.
 
